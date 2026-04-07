@@ -21,7 +21,7 @@ let temperature = 20;
 
 // ⚠️ Remplace COM5 par TON port Arduino
 const port = new SerialPort({
-    path: 'COM5',
+    path: '/dev/ttyUSB0',
     baudRate: 9600,
 });
 
