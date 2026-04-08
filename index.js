@@ -30,7 +30,6 @@ const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
 
 // Quand une donnée arrive depuis Arduino
 parser.on('data', (data) => {
-    console.log("Reçu brut :", data);
 
    const values = data.split(",");
 
