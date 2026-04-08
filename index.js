@@ -40,12 +40,21 @@ parser.on('data', (data) => {
 
 
 // Route API
-app.get('/data', (req, res) => {
+app.get('/data', async (req, res) => {
     console.log("API SEND:", humidity, temperature);
+
+    const API_KEY = 'a71a09bd1141490caad125354260404';
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Jumet`)
+    const weatherData = await response.json();
+
+    const externalTemp = weatherData.current.temp_c;
+    const externalHumidity = weatherData.current.humidity;
 
     res.json({
         humidity,
-        temperature
+        temperature,
+        externalTemp,
+        externalHumidity
     });
 });
 
