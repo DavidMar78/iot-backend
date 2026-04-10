@@ -59,6 +59,6 @@ app.get('/data', async (req, res) => {
 
 // Lancement serveur
 app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+    console.log('Server running on http://192.168.1.59:3000');
     console.log(humidity)
 });
